@@ -22,3 +22,12 @@ eureka:
 mybatis:
   mapper-locations: /mapper/**/*.xml
   type-aliases-package: com.dream.manage.dto
+
+---  
+# security 설정
+spring:    
+  security: # security부터 keycloak 까지는 외부화 실패
+    oauth2:
+     resourceserver:
+        jwt:
+          jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
