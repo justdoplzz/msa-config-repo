@@ -30,12 +30,12 @@ spring:
          filters:
            - RewritePath=/menu/?(?<segment>.*), /$\{segment}   
              
-#        - id: product-service
-#          uri: lb://PRODUCT-SERVICE 
-#          predicates:
-#            - Path=/product/** 
-#          filters:
-#            - RewritePath=/product/?(?<segment>.*), /$\{segment}                      
+       - id: product-service
+         uri: lb://PRODUCT-SERVICE 
+         predicates:
+           - Path=/product/** 
+         filters:
+           - RewritePath=/product/?(?<segment>.*), /$\{segment}                      
              
        - id: manage-service
          uri: lb://MANAGE-SERVICE 
