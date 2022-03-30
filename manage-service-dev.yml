@@ -13,23 +13,7 @@ eureka:
 mybatis:
   mapper-locations: /mapper/**/*.xml
   type-aliases-package: com.dream.manage.dto
-  
-  # db 설정 
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
-    username: dream
-    password: 1234
-
----  
-# security 설정
-spring:    
-  security: # security부터 keycloak 까지는 외부화 실패
-    oauth2:
-     resourceserver:
-        jwt:
-          jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
+ 
           
 #keycloak 설정      
 keycloak:
@@ -40,3 +24,21 @@ keycloak:
   auth-server-url: http://192.168.1.54:8080/auth
   credentials:
     secret: WEcACPUTWPfuhPrEz3bBaHcl7OLLmYX1
+
+#-----------------------------내부---------------------------------------------------
+#   # db 설정 
+# spring:
+#   datasource:
+#     driver-class-name: com.mysql.cj.jdbc.Driver
+#     url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
+#     username: dream
+#     password: 1234
+
+# ---  
+# # security 설정
+# spring:    
+#   security: # security부터 keycloak 까지는 외부화 실패
+#     oauth2:
+#      resourceserver:
+#         jwt:
+#           jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
