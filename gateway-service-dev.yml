@@ -44,12 +44,12 @@ spring:
          filters:
            - RewritePath=/manage/?(?<segment>.*), /$\{segment}
        
-       - id: loan-service
-         uri: lb://LOAN-SERVICE 
-         predicates:
-           - Path=/loan/** 
-         filters:
-           - RewritePath=/loan/?(?<segment>.*), /$\{segment} 
+#        - id: loan-service
+#          uri: lb://LOAN-SERVICE 
+#          predicates:
+#            - Path=/loan/** 
+#          filters:
+#            - RewritePath=/loan/?(?<segment>.*), /$\{segment} 
                                 
        - id: list-service
          uri: lb://LIST-SERVICE 
