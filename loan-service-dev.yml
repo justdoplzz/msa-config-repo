@@ -51,6 +51,6 @@ eureka:
      
 #kafka 설정
 kafka:
- server_endpoint: 127.0.0.1:9092
+ server_endpoint: 172.18.0.101:9092
  topic_name: my-topic
 #  bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력
