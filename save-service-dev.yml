@@ -55,5 +55,5 @@ eureka:
 kafka:
 #   server_endpoint: 172.18.0.101:9092
   topic_name: my-topic
-  group_id: consumer-1
+#   group_id: consumer-1
 #   bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력
