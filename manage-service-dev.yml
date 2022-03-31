@@ -4,11 +4,11 @@ spring:
  config:
   activate:
    on-profile: dev
----
-spring:
- profiles:
-    include:
-    - db  
+# ---
+# spring:
+#  profiles:
+#     include:
+#     - db  
 
 
 server:
