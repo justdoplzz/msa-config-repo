@@ -1,10 +1,10 @@
 spring:
- application: 
-  name: manage-service
- activate:
-  on-profile:local
- profiles:
-  include: db
+  config:
+    activate:
+      on-profile: local
+  profiles:
+    include:
+      - db
  
 ---
 server:
