@@ -1,10 +1,7 @@
 spring:
-  config:
-    activate:
-      on-profile: local
-  profiles:
-    include:
-      - db
+ profiles:
+   include:
+     - db
 
 server:
   port: 8002  
