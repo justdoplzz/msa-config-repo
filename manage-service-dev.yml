@@ -17,3 +17,5 @@ spring:
       on-profile: qa
 #   profiles:
 #     include: qa
+  profiles:
+   active: qa
