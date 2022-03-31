@@ -9,13 +9,20 @@
 #      activate :
 #        on-profile : qa
 
+# spring:
+#   application:
+#     name: manage-service
+#   config:
+#     activate:
+#       on-profile: qa
+# #   profiles:
+# #     include: qa
+#   profiles:
+#    active: qa
+
 spring:
   application:
     name: manage-service
-  config:
-    activate:
-      on-profile: qa
-#   profiles:
-#     include: qa
   profiles:
-   active: qa
+    group:
+      "production": qa
