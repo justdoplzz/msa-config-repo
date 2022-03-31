@@ -1,4 +1,10 @@
-
+spring:
+ profiles:
+  include: db
+---
+spring:
+ profiles: dev
+---
  
 
 server:
