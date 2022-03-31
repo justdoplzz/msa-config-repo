@@ -25,4 +25,4 @@ spring:
     name: manage-service
   profiles:
     group:
-      "production": qa
+      "production": manage-service-qa
