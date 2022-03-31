@@ -21,13 +21,20 @@
 #  profiles:
 #   include: db
 
+# spring:
+#  application:
+#   name: manage-service
+#  activate:
+#   on-profile: local
+#  profiles:
+#   include: db
+
 spring:
- application:
-  name: manage-service
- activate:
-  on-profile: local
+ config:
+  activate:
+   on-profile: dev
  profiles:
-  include: db
+  include: "db"
 ---
 
 server:
