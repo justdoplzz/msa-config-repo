@@ -1,5 +1,8 @@
 spring:
+ application:
+  name: manage-service
  profiles:
+  active: dev
    include: db
 
 
