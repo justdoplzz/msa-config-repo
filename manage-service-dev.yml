@@ -29,13 +29,20 @@
 #  profiles:
 #   include: db
 
+# spring:
+#  config:
+#   activate:
+#    on-profile: local
+#  profiles:
+#   include: 
+#    -db
 spring:
  config:
   activate:
-   on-profile: local
+   on-profile: dev
  profiles:
-  include: 
-   -db
+  include: db
+  
 ---
 
 server:
