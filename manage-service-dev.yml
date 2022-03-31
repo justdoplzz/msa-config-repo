@@ -1,6 +1,11 @@
 spring:
  application:
   name: manage-service
+ config:
+  activate:
+   on-profile: dev
+---
+spring: 
  profiles:
   include: db
 
