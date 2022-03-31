@@ -32,7 +32,7 @@ mybatis:
 kafka:
  server_endpoint: 127.0.0.1:9092
  topic_name: my-topic
-# bootstrap-servers: 127.0.0.1:9092 #도커 ip주소 입력
+ bootstrap-servers: 127.0.0.1:9092 #도커 ip주소 입력
  
 # 유레카 클라이언트 설정            
 eureka:
