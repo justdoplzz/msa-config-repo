@@ -10,7 +10,7 @@ eureka:
    register-with-eureka: true  # 유레카에 등록할지 여부.
    fetch-registry: true   # 유레카에서 조회할지 여부
    service-url:
-     defaultZone: http://127.0.0.1:8761/eureka 
+     defaultZone: http://localhost:8761/eureka 
 # ---
 # spring:
 #   devtools:
