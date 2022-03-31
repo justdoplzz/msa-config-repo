@@ -1,7 +1,6 @@
 spring:
- profiles:
-   include:
-     - db
+ application:
+  name: manage-service
 
 
 server:
