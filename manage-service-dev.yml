@@ -5,9 +5,10 @@ spring:
   activate:
    on-profile: dev
 ---
-spring: 
+spring:
  profiles:
-  include: db
+    include:
+    - db  
 
 
 server:
