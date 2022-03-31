@@ -3,7 +3,7 @@ spring:
     activate:
       on-profile: dev
   profiles:
-    include: "db"
+    include: db
  
 ---
 server:
