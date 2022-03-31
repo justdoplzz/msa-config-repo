@@ -1,9 +1,7 @@
 spring:
- application:
-  name: manage-service
  profiles:
-  active: dev
-   include: db
+   include:
+     - db
 
 
 server:
@@ -19,6 +17,7 @@ server:
 #     password: 1234   
 
 --- 
+
 # security 설정
 spring:    
   security:
