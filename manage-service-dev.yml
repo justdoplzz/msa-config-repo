@@ -20,9 +20,20 @@
 #   profiles:
 #    active: qa
 
+# spring:
+#   application:
+#     name: manage-service
+#   profiles:
+#     group:
+#       "production": manage-service-qa
+      
 spring:
-  application:
-    name: manage-service
+ application:
+  name: manage-service
+---
+spring:
+  config:
+    activate:
+      on-profile: "production"
   profiles:
-    group:
-      "production": manage-service-qa
+    include: qa
