@@ -34,6 +34,6 @@ spring:
 spring:
   config:
     activate:
-      on-profile: "production"
+      on-profile: dev
   profiles:
     include: qa
