@@ -4,7 +4,14 @@
 #   profiles:
 #    active: qa
 
-spring :
-   config :
-     activate :
-       on-profile : qa
+# spring :
+#    config :
+#      activate :
+#        on-profile : qa
+
+spring:
+  config:
+    activate:
+      on-profile: manage-service
+  profiles:
+    include: qa
