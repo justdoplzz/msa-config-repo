@@ -34,7 +34,8 @@ spring:
   activate:
    on-profile: local
  profiles:
-  include: "db"
+  include: 
+   -db
 ---
 
 server:
