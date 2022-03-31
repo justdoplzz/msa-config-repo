@@ -10,10 +10,11 @@ spring:
    
 ---
 #docker kafka 설정
-spring:
- 
-    server_endpoint: 127.0.0.1:9092
-    topic_name: my-topic
+# spring:
+#   kafka:
+#     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력
+#     server_endpoint: 127.0.0.1:9092
+#     topic_name: my-topic
     
 # security 설정
 spring:       
