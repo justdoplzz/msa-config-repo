@@ -10,12 +10,17 @@
 #     include:
 #     - db  
 
+# spring:
+#  application:
+#   name: manage-service
+#  profiles:
+#   active: dev
+#    include: db
+
 spring:
- application:
-  name: manage-service
  profiles:
-  active: dev
-   include: db
+  include: db
+---
 
 server:
   port: 8002  
