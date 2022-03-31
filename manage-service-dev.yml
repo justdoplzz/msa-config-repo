@@ -17,7 +17,15 @@
 #   active: dev
 #    include: db
 
+# spring:
+#  profiles:
+#   include: db
+
 spring:
+ application:
+  name: manage-service
+ activate:
+  on-profile: local
  profiles:
   include: db
 ---
