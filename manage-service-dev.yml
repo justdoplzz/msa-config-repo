@@ -1,11 +1,6 @@
-spring:
-  config:
-    activate:
-      on-profile: dev
-  profiles:
-    include: db
+
  
----
+
 server:
   port: 8002  
   
