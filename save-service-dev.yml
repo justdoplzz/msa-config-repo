@@ -5,14 +5,16 @@ spring:
     url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
     username: dream
     password: 1234
+  kafka:
+    bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력   
 ---
 #docker kafka 설정
-spring:
-   kafka:
-    bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력        
-    server_endpoint: 127.0.0.1:9092
-    topic_name: my-topic
-    group_id: consumer-1
+# spring:
+#    kafka:
+#     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력        
+#     server_endpoint: 127.0.0.1:9092
+#     topic_name: my-topic
+#     group_id: consumer-1
     
 # security 설정
 spring:       
@@ -47,8 +49,8 @@ eureka:
      defaultZone: http://192.168.1.49:8761/eureka # 서비스를 등록할 서버 주소를 지정  #임시 : 도커를 위해 현민ip주소에 등록
       
 #kafka 설정
-# kafka:
-#   server_endpoint: 127.0.0.1:9092
-#   topic_name: my-topic
-#   group_id: consumer-1
+kafka:
+  server_endpoint: 127.0.0.1:9092
+  topic_name: my-topic
+  group_id: consumer-1
 #   bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력
