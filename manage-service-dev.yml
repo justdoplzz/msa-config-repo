@@ -1,9 +1,9 @@
 spring:
  application:
   name: manage-service
- config:
-  activate:
-   on-profile: dev
+#  config:
+#   activate:
+#    on-profile: dev
 # ---
 # spring:
 #  profiles:
