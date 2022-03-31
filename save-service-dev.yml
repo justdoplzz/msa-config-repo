@@ -11,14 +11,7 @@ spring:
   kafka:
     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력   
 ---
-#docker kafka 설정
-# spring:
-#    kafka:
-#     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력        
-#     server_endpoint: 127.0.0.1:9092
-#     topic_name: my-topic
-#     group_id: consumer-1
-    
+   
 # security 설정
 spring:       
   security:
@@ -53,7 +46,7 @@ eureka:
       
 #kafka 설정
 kafka:
-#   server_endpoint: 172.18.0.101:9092
+  server_endpoint: 172.18.0.101:9092
   topic_name: my-topic
-#   group_id: consumer-1
-#   bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력
+  group_id: consumer-1
+
