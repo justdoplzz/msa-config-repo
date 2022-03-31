@@ -10,8 +10,10 @@
 #        on-profile : qa
 
 spring:
+  application:
+    name: manage-service
   config:
     activate:
-      on-profile: manage-service
-  profiles:
-    include: qa
+      on-profile: qa
+#   profiles:
+#     include: qa
