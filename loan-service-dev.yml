@@ -16,7 +16,7 @@ spring:
 kafka:
   server_endpoint: 127.0.0.1:9092
   topic_name: my-topic-receivedproduct
-  group_id: consumer
+  group_id: consumer-1
   
 ---    
 # security 설정
