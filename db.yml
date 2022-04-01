@@ -20,9 +20,6 @@
 
 # db 설정 
 spring:
-  cloud:
-    config:
-      profile: db
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
