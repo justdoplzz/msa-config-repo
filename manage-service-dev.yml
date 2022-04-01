@@ -44,10 +44,10 @@
 #  profiles:
 #   include: db
 
-spring:
-  profiles:
-    active: db
----
+# spring:
+#   profiles:
+#     active: db
+# ---
 
 server:
   port: 8002  
