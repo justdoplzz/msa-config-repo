@@ -9,6 +9,11 @@ spring:
     static-locations: classpath:/resources/static/**    
   kafka:
     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력  
+---
+#kafka 설정
+kafka:
+  server_endpoint: 172.18.0.101:9092
+  topic_name: my-topic-receivedproduct
   
 # ---  
 # #docker kafka
@@ -32,8 +37,8 @@ eureka:
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
 
----
-#kafka 설정
-kafka:
-  server_endpoint: 172.18.0.101:9092
-  topic_name: my-topic1
+# ---
+# #kafka 설정
+# kafka:
+#   server_endpoint: 172.18.0.101:9092
+#   topic_name: my-topic1
