@@ -7,7 +7,7 @@ spring:
     password: 1234
   kafka:
     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력      
-# ---
+---
 # #docker kafka
 # spring:    
 #   kafka:
