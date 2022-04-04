@@ -1,4 +1,4 @@
-  # db 설정 
+ # db 설정 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -7,19 +7,24 @@ spring:
     password: 1234
   resources:
     static-locations: classpath:/resources/static/**    
-  kafka:
-    bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력  
----
+#   kafka:
+#     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력  
+# ---
+# #kafka 설정
+# kafka:
+#   server_endpoint: 172.18.0.101:9092
+#   topic_name: my-topic-receivedproduct
+# ---
 #kafka 설정
 kafka:
-  server_endpoint: 172.18.0.101:9092
-  topic_name: my-topic-receivedproduct
-  
+  server_endpoint: 127.0.0.1:9092
+  topic_name: my-topic1 
 # ---  
 # #docker kafka
 # spring:    
 #   kafka:
 #     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력 
+
 
     
 # 유레카 클라이언트 설정   
