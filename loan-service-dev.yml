@@ -5,8 +5,8 @@ spring:
     url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
     username: dream
     password: 1234
-   kafka:
-     bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력      
+#    kafka:
+#      bootstrap-servers: 172.18.0.101:9092 #도커 ip주소 입력      
 ---
 # #docker kafka
 # spring:    
