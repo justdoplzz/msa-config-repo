@@ -23,7 +23,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: menuCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure
+                  fallbackUri: forward:/fallback/failure
               
         - id: product-service
           uri: lb://PRODUCT-SERVICE 
@@ -34,7 +34,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: productCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure                 
+                  fallbackUri: forward:/fallback/failure                
               
         - id: manage-service
           uri: lb://MANAGE-SERVICE 
@@ -45,7 +45,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: manageCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure      
+                  fallbackUri: forward:/fallback/failure    
         - id: loan-service
           uri: lb://LOAN-SERVICE 
           predicates:
@@ -55,7 +55,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: loanCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure
+                  fallbackUri: forward:/fallback/failure
                                  
         - id: list-service
           uri: lb://LIST-SERVICE 
@@ -66,7 +66,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: listCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure 
+                  fallbackUri: forward:/fallback/failure
             
         - id: save-service
           uri: lb://SAVE-SERVICE 
@@ -77,7 +77,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: saveCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure
+                  fallbackUri: forward:/fallback/failure
                                         
         - id: status-service
           uri: lb://STATUS-SERVICE 
@@ -88,7 +88,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: statusCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure
+                  fallbackUri: forward:/fallback/failure
 
         - id: error-service-fallback
           uri: lb://ERROR-SERVICE-FALLBACK # uri: http://localhost:8001 # 포워딩 할 주소, http://localhost:8000/menu 로 들어오면 http://localhost:8001로 포워딩
@@ -99,7 +99,7 @@ spring:
             - name: CircuitBreaker
               args:
                   name: errorCircuitBreaker
-                  fallbackUri: forward:/fallback/Faliure  
+                  fallbackUri: forward:/fallback/failure
 
 ## security 설정
 #spring:
