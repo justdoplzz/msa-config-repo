@@ -25,15 +25,15 @@ spring:
                   name: menuCircuitBreaker
                   fallbackUri: forward:/fallback/failure
               
-        - id: product-service
-          uri: lb://PRODUCT-SERVICE 
+        - id: main-service
+          uri: lb://MAIN-SERVICE 
           predicates:
-            - Path=/product/** 
+            - Path=/main/** 
           filters:
-            - RewritePath=/product/?(?<segment>.*), /$\{segment}     
+            - RewritePath=/main/?(?<segment>.*), /$\{segment}     
             - name: CircuitBreaker
               args:
-                  name: productCircuitBreaker
+                  name: mainCircuitBreaker
                   fallbackUri: forward:/fallback/failure                
               
         - id: manage-service
@@ -138,7 +138,7 @@ resilience4j:
         baseConfig: default
       manageCircuitBreaker:
         baseConfig: default
-      productCircuitBreaker:
+      mainCircuitBreaker:
         baseConfig: default
       loanCircuitBreaker:
         baseConfig: default
