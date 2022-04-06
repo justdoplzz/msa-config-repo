@@ -1,6 +1,6 @@
 server:
   port: 8000
-
+spring:
   cloud:
    gateway:
       filter:
@@ -100,7 +100,6 @@ server:
             user-name-attribute: preferred_username
         registration:
           keycloak:
-#            provider: keycloak
             client-id: spring-gateway-client
             client-secret: WEcACPUTWPfuhPrEz3bBaHcl7OLLmYX1
             authorization-grant-type: authorization_code
