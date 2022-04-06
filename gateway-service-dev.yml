@@ -91,7 +91,6 @@ server:
                   fallbackUri: forward:/fallback/failure
 
 ## security 설정
-#spring:
   security:
     oauth2:
       client:
