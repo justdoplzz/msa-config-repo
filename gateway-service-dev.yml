@@ -129,7 +129,7 @@ resilience4j:
       productCircuitBreaker:
         baseConfig: default
       errorCircuitBreaker:
-        base-config: default
+        baseConfig: default
         
 # 유레카 클라이언트 설정
 eureka:
