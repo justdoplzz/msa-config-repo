@@ -111,7 +111,7 @@ spring:
                
 #keycloak 설정          
 keycloak:
-  realm: DREAM
+  realm: MSA
   resource: spring-gateway-client
   auth-server-url: http://192.168.1.54:8080/auth
  
