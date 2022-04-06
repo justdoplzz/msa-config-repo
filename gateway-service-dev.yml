@@ -1,8 +1,6 @@
 server:
   port: 8000
 
-#라우팅
-spring:   
   cloud:
    gateway:
       filter:
@@ -76,12 +74,12 @@ spring:
             - Path=/product/** 
           filters:
             - RewritePath=/product/?(?<segment>.*), /$\{segment}
-            - name: productCircuitBreaker
+            - name: CircuitBreaker
               args:
                   name: productCircuitBreaker
                   fallbackUri: forward:/fallback/failure
                                         
-         - id: error-service-fallback
+        - id: error-service-fallback
           uri: lb://ERROR-SERVICE-FALLBACK # uri: http://localhost:8001 # 포워딩 할 주소, http://localhost:8000/menu 로 들어오면 http://localhost:8001로 포워딩
           predicates:
             - Path=/fallback/** # 해당 gateway 서버의 /menu/**로 들어오는 menu-service로 인식하겠다는 조건
@@ -109,11 +107,6 @@ spring:
             authorization-grant-type: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'        
                
-#keycloak 설정          
-keycloak:
-  realm: MSA
-  resource: spring-gateway-client
-  auth-server-url: http://192.168.1.54:8080/auth
  
 #서킷브레이커    
 resilience4j:
@@ -149,5 +142,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka # 서비스를 등록할 서버 주소를 지정
   instance:
     instance-id: gateway-microservice-instance # eureka에 등록되는 id 값
-
   
