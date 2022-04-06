@@ -45,4 +45,4 @@ mybatis:
 # #kafka 설정
 kafka:
   server_endpoint: 127.0.0.1:9092
-  topic_name: my-topic1
+  topic_name: status-topic
