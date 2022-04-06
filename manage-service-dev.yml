@@ -41,3 +41,8 @@ eureka:
 mybatis:
   mapper-locations: /mapper/**/*.xml
   type-aliases-package: com.dream.manage.dto
+  
+# #kafka 설정
+kafka:
+  server_endpoint: 127.0.0.1:9092
+  topic_name: my-topic1
