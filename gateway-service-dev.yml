@@ -14,17 +14,6 @@ spring:
       default-filters:
         -  TokenRelay
       routes:          
-        - id: menu-service
-          uri: lb://MENU-SERVICE # uri: http://localhost:8001 # 포워딩 할 주소, http://localhost:8000/menu 로 들어오면 http://localhost:8001로 포워딩
-          predicates:
-            - Path=/menu/** # 해당 gateway 서버의 /menu/**로 들어오는 menu-service로 인식하겠다는 조건
-          filters:
-            - RewritePath=/menu/?(?<segment>.*), /$\{segment}
-            - name: CircuitBreaker
-              args:
-                  name: menuCircuitBreaker
-                  fallbackUri: forward:/fallback/failure
-              
         - id: main-service
           uri: lb://MAIN-SERVICE 
           predicates:
@@ -34,7 +23,30 @@ spring:
             - name: CircuitBreaker
               args:
                   name: mainCircuitBreaker
-                  fallbackUri: forward:/fallback/failure                
+                  fallbackUri: forward:/fallback/failure 
+                  
+        - id: order-service
+          uri: lb://ORDER-SERVICE 
+          predicates:
+            - Path=/order/** 
+          filters:
+            - RewritePath=/order/?(?<segment>.*), /$\{segment} 
+            - name: CircuitBreaker
+              args:
+                  name: orderCircuitBreaker
+                  fallbackUri: forward:/fallback/failure
+                  
+                  
+        - id: confirm-service
+          uri: lb://CONFIRM-SERVICE 
+          predicates:
+            - Path=/confirm/** 
+          filters:
+            - RewritePath=/confirm/?(?<segment>.*), /$\{segment} 
+            - name: CircuitBreaker
+              args:
+                  name: confirmCircuitBreaker
+                  fallbackUri: forward:/fallback/failure
               
         - id: manage-service
           uri: lb://MANAGE-SERVICE 
@@ -46,51 +58,30 @@ spring:
               args:
                   name: manageCircuitBreaker
                   fallbackUri: forward:/fallback/failure    
-        - id: loan-service
-          uri: lb://LOAN-SERVICE 
-          predicates:
-            - Path=/loan/** 
-          filters:
-            - RewritePath=/loan/?(?<segment>.*), /$\{segment} 
-            - name: CircuitBreaker
-              args:
-                  name: loanCircuitBreaker
-                  fallbackUri: forward:/fallback/failure
                                  
-        - id: list-service
-          uri: lb://LIST-SERVICE 
+        - id: approve-service
+          uri: lb://APPROVE-SERVICE 
           predicates:
-            - Path=/list/** 
+            - Path=/approve/** 
           filters:
-            - RewritePath=/list/?(?<segment>.*), /$\{segment}  
+            - RewritePath=/approve/?(?<segment>.*), /$\{segment}  
             - name: CircuitBreaker
               args:
-                  name: listCircuitBreaker
+                  name: approveCircuitBreaker
                   fallbackUri: forward:/fallback/failure
             
-        - id: save-service
-          uri: lb://SAVE-SERVICE 
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE 
           predicates:
-            - Path=/save/** 
+            - Path=/product/** 
           filters:
-            - RewritePath=/save/?(?<segment>.*), /$\{segment}
-            - name: CircuitBreaker
+            - RewritePath=/product/?(?<segment>.*), /$\{segment}
+            - name: productCircuitBreaker
               args:
-                  name: saveCircuitBreaker
+                  name: productCircuitBreaker
                   fallbackUri: forward:/fallback/failure
                                         
-        - id: status-service
-          uri: lb://STATUS-SERVICE 
-          predicates:
-            - Path=/status/** 
-          filters:
-            - RewritePath=/status/?(?<segment>.*), /$\{segment}
-            - name: CircuitBreaker
-              args:
-                  name: statusCircuitBreaker
-                  fallbackUri: forward:/fallback/failure
-
-        - id: error-service-fallback
+         - id: error-service-fallback
           uri: lb://ERROR-SERVICE-FALLBACK # uri: http://localhost:8001 # 포워딩 할 주소, http://localhost:8000/menu 로 들어오면 http://localhost:8001로 포워딩
           predicates:
             - Path=/fallback/** # 해당 gateway 서버의 /menu/**로 들어오는 menu-service로 인식하겠다는 조건
@@ -134,19 +125,17 @@ resilience4j:
         failureRateThreshold: 50  # 에러 비율 (퍼센트)로 해당 값 이상으로 에러 발생시 서킷이 Open 된다.
         waitDurationInOpenState: 30s  # 서킷의 상태가 Open에서 Half-open으로 변경되기 전에 Circuit Breaker가 기다리는 시간
     instances:
-      menuCircuitBreaker:
+      mainCircuitBreaker:
+        baseConfig: default
+      orderCircuitBreaker:
+        baseConfig: default
+      confirmCircuitBreaker:
         baseConfig: default
       manageCircuitBreaker:
         baseConfig: default
-      mainCircuitBreaker:
+      approveCircuitBreaker:
         baseConfig: default
-      loanCircuitBreaker:
-        baseConfig: default
-      saveCircuitBreaker:
-        baseConfig: default
-      listCircuitBreaker:
-        baseConfig: default
-      statusCircuitBreaker:
+      productCircuitBreaker:
         baseConfig: default
       errorCircuitBreaker:
         base-config: default
