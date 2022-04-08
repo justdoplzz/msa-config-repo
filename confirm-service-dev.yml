@@ -35,7 +35,7 @@ spring:
 #kafka 설정
 kafka:
   server_endpoint: 127.0.0.1:9092
-  topic_name: confirm-topic
+  topic_name: my-topic1
   group_id: consumer-2
 # ---  
 # #docker kafka
