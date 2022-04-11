@@ -56,5 +56,9 @@ eureka:
 #kafka 설정
 kafka:
   server_endpoint: 127.0.0.1:9092
-  topic_name: my-topic1, my-topic2
+  topic_name: my-topic1
   group_id: consumer-loan-service
+---
+kafka:
+  server_endpoint: 127.0.0.1:9092
+  topic_name: my-topic2
