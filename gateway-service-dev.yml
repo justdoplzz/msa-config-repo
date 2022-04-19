@@ -7,8 +7,8 @@ spring:
         circuit-breaker:
           enabled: true
       httpclient:
-        connect-timeout: 10000
-        response-timeout: 100s
+        connect-timeout: 1000000000000000000
+        response-timeout: 10000000000000000000s
       default-filters:
         -  TokenRelay
       routes:          
