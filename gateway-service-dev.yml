@@ -116,11 +116,7 @@ resilience4j:
         failureRateThreshold: 50  # 에러 비율 (퍼센트)로 해당 값 이상으로 에러 발생시 서킷이 Open 된다.
         waitDurationInOpenState: 10s  # 서킷의 상태가 Open에서 Half-open으로 변경되기 전에 Circuit Breaker가 기다리는 시간
         ringBufferSizeInClosedState: 10 # 마지막 10개의 호출 저장
-        slidingWindowSize: 10 # 통계 큐 사이즈
-        permittedNumberOfCallsInHalfOpenState: 10 # half 내 통계 큐 사이즈
         slidingWindowType: COUNT_BASED
-        slowCallRateThreshold: 50
-        slowCallDurationThreshold: 5000ms #5s
         
     instances:
       mainCircuitBreaker:
