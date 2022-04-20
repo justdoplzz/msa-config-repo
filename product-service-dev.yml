@@ -1,3 +1,6 @@
+server:
+  port: 8006
+
 # db 설정 
 spring:
   datasource:
