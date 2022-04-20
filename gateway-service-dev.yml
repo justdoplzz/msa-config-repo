@@ -117,8 +117,8 @@ resilience4j:
         waitDurationInOpenState: 10s  # 서킷의 상태가 Open에서 Half-open으로 변경되기 전에 Circuit Breaker가 기다리는 시간
         ringBufferSizeInClosedState: 10 # 닫힌 상태에서의 호출 수로, 서킷을 열어야 할지 결정할 때 사용한다.    
         ringBufferSizeInHalfOpenState: 30 # 반열림 상태에서의 호출 수로, 서킷을 다시 열거나 닫힘 상태로 돌아갈지를 결정할 때 사용 한다.
-        slidingWindowType: COUNT_BASED
-        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED # 카운트 기반 설정
+        slidingWindowSize: 10 # 사이즈 설정
         
     instances:
       mainCircuitBreaker:
