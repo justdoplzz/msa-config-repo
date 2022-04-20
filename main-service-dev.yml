@@ -1,3 +1,6 @@
+server:
+  port: 8001
+  
 #keycloak 설정          
 keycloak:
   realm: MSA
