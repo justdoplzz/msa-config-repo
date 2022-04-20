@@ -148,3 +148,5 @@ eureka:
   instance:
     instance-id: gateway-microservice-instance # eureka에 등록되는 id 값
   
+config:
+  test: 안녕?
