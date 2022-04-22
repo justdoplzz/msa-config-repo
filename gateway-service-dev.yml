@@ -121,6 +121,10 @@ resilience4j:
         slidingWindowType: COUNT_BASED # 카운트 기반 설정
         slidingWindowSize: 100 # 사이즈 설정
         permittedNumberOfCallsInHalfOpenState: 10 # half 내 통계 큐 사이즈
+  timelimiter: 
+    configs:
+      default:
+        timeout-duration: 5s
         
 
         
