@@ -119,7 +119,7 @@ resilience4j:
         ringBufferSizeInClosedState: 10 # 닫힌 상태에서의 호출 수로, 서킷을 열어야 할지 결정할 때 사용한다.    
         ringBufferSizeInHalfOpenState: 20 # 반열림 상태에서의 호출 수로, 서킷을 다시 열거나 닫힘 상태로 돌아갈지를 결정할 때 사용 한다.
         slidingWindowType: COUNT_BASED # 카운트 기반 설정
-        slidingWindowSize: 20 # 사이즈 설정
+        slidingWindowSize: 100 # 사이즈 설정
         permittedNumberOfCallsInHalfOpenState: 10 # half 내 통계 큐 사이즈
   timelimiter: 
     configs:
