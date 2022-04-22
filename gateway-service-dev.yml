@@ -124,7 +124,7 @@ resilience4j:
   timelimiter: 
     configs:
       default:
-        timeout-duration: 5s
+        timeout-duration: 5s // 시간 내 응답이 오지 않을 경우 fall-back함수 호출
         
 
         
