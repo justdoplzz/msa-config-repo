@@ -5,8 +5,8 @@ server:
 spring:         
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.49:13306/dream?serverTimezone=UTC&characterEncoding=UTF-8
-    username: dream
+    url: jdbc:mysql://192.168.1.54:13306/dream?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
     password: 1234
   kafka:
     bootstrap-servers: 127.0.0.1:9092 #도커 ip주소 입력   
