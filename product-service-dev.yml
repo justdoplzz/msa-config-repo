@@ -27,7 +27,8 @@ spring:
     hibernate:
       ddl-auto: none
 # 객체에 매핑되는 기존 테이블 자동 드랍 및 새로운 테이블 생성
-   
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 --- 
 # security 설정
 spring:    
